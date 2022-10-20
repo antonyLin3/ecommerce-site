@@ -1,0 +1,4 @@
+{
+  //如果之後有找不到next/babel的地方，回到26:50看一下如何設定
+  "extends": "@sanity/eslint-config-studio"
+}
