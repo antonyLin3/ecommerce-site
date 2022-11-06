@@ -185,7 +185,7 @@ p {
 }
 
 /* navbar */
-.navbar-container p {
+.navbar-container .logo {
   display: inline-block;
   padding: 20px;
 }
@@ -327,7 +327,7 @@ p {
 }
 
 .quantity-desc .num{
-  font-size: 20px;
+  font-size: 18px;
   line-height: 26px;
   padding: 0px 10px;
   /* border: solid 1px #999; */
@@ -359,3 +359,159 @@ p {
 
 
 }
+
+/* 購物車 */
+.cart-wrapper {
+  position: fixed;
+  background-color: rgba(128, 128, 128, 0.327);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-container {
+  background-color: white;
+  display: inline-block;
+  padding: 30px;
+  width: 400px;
+  z-index: 200;
+}
+
+.cart-heading {
+  background-color: white;
+  border: none;
+  line-height: 20px;
+  display: flex;
+  cursor: pointer;
+  /* justify-content: center; */
+}
+
+.cart-heading .heading {
+  font-size: 14px;
+}
+
+.cart-heading .cart-num-items {
+  font-size: 14px;
+  color: #d51515;
+  padding-left: 10px;
+}
+
+/* 空購物車操作 */
+.empty-cart {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-cart h3 {
+  font-size: 20px;
+}
+
+.empty-cart .btn {
+  background-color: #d51515;
+  border: none;
+  color:white;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+/* 購物車有東西狀態 */
+.cart-container .product-container {
+  margin-top: 20px;
+}
+
+.cart-container .product {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 17px;
+  
+}
+
+.item-desc {
+  width: 100%;
+}
+
+.cart-container .flex {
+  display: flex;
+  align-items: center;
+  /* padding: 0px 10px; */
+  /* justify-content: space-around */
+}
+
+.cart-container h5 {
+  font-size: 18px;
+  /* text-align: left; */
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+.cart-container h4 {
+  font-size: 18px;
+  /* text-align: right; */
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+.cart-container .bottom {
+  width: 100%;
+}
+
+.cart-container .quantity-desc{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px 0px 20px;
+  /* width: 100%; */
+  margin-right: 50px;
+}
+
+.cart-container .delete-item {
+  background-color: #fff;
+  border: none;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.cart-bottom {
+  position: fixed;
+  bottom: 20px;
+}
+
+.cart-bottom .total h3 {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.cart-bottom .total h3:first-child {
+  margin-right: 200px;
+}
+
+.cart-bottom .btn-container {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.cart-bottom .btn-container .btn {
+  background-color: #d51515;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 14px 50px;
+  border-radius: 20px;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+.cart-bottom .btn-container .btn:hover {
+  background-color: black;
+  
+}
+
+
+

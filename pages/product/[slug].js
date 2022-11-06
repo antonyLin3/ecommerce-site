@@ -7,9 +7,9 @@ import { useStateContext } from '../../context/StateContext'
 const productDetails = ({ product, products}) => {
   const { image, name, details, price } = product[0] 
   const [index, setIndex] = useState(0)
-  const { decQty, incQty, qty } = useStateContext()
+  const { decQty, incQty, qty, onAdd } = useStateContext()
   // 這裡先強制給定0個產品
-  console.log(image)
+  console.log(product)
   return (
     <div>
       <div className='product-details-container'>
@@ -19,8 +19,9 @@ const productDetails = ({ product, products}) => {
 
             <div
             className='small-image-container'>
-              {image.map((item, i) => {
+              {image?.map((item, i) => {
                 return <img 
+                  key={i}
                   src={urlFor(item)}
                   className={i === index && "small-image-selected"}
                   onMouseEnter={() => (setIndex(i))}
@@ -55,8 +56,8 @@ const productDetails = ({ product, products}) => {
                 <span className='plus' onClick={incQty}><AiOutlinePlus size={25}/></span>
               </p>
             </div>
-            <button type='button' className='add-to-cart'>加入購物車</button>
-            <button type='button' className='buy-now'>直接購買</button>
+            <button type='button' className='add-to-cart' onClick={()=>{onAdd(product[0], qty)}}>加入購物車</button>
+            <button type='button' className='buy-now' >直接購買</button>
 
             
           </div>
@@ -67,7 +68,6 @@ const productDetails = ({ product, products}) => {
         <div className='marquee'>
           <div className='may-like-product-container'>
             {products.map((item, i)=> (<Product key={item._id} product={item}/>))}
-            {console.log(product)}
           </div>
         </div>
       </div>
