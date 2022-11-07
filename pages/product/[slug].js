@@ -3,13 +3,41 @@ import { Product } from '../../components'
 import { client, urlFor} from '../../lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { useStateContext } from '../../context/StateContext'
+import getStripe from '../../lib/getStripe'
+import toast from 'react-hot-toast'
 
 const productDetails = ({ product, products}) => {
   const { image, name, details, price } = product[0] 
   const [index, setIndex] = useState(0)
   const { decQty, incQty, qty, onAdd } = useStateContext()
+
+  //購物邏輯
+  const handleCheckout = async() => {
+    let directBuyProduct = Object.assign(product[0],{quantity:qty})
+    const directBuyProductList = [directBuyProduct]
+    console.log(directBuyProductList)
+
+    const stripe = await getStripe()
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(directBuyProductList),
+    })
+  
+    if (response.statusCode === 500) return 
+  
+    const data = await response.json()
+    console.log(data)
+    toast.loading('重新導向中')
+    stripe.redirectToCheckout( {sessionId: data.id} )
+    console.log({...product, quantity: 123123})
+    
+  }
+
   // 這裡先強制給定0個產品
-  console.log(product)
+  console.log(product[0])
   return (
     <div>
       <div className='product-details-container'>
@@ -57,7 +85,7 @@ const productDetails = ({ product, products}) => {
               </p>
             </div>
             <button type='button' className='add-to-cart' onClick={()=>{onAdd(product[0], qty)}}>加入購物車</button>
-            <button type='button' className='buy-now' >直接購買</button>
+            <button type='button' className='buy-now' onClick={()=>handleCheckout()} >直接購買</button>
 
             
           </div>

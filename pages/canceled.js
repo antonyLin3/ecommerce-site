@@ -1,33 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { BsBagCheckFill} from 'react-icons/bs'
+import { BsBagXFill} from 'react-icons/bs'
 // import { IconName } from "react-icons/bs";
 import { useRouter } from 'next/router'
 import { runConfetti } from '../lib/utils' 
 
 import { useStateContext } from '../context/StateContext'
 
-const success = () => {
-    const { setCartItems, setTotalPrice, setTotalQuantity } = useStateContext()
-    const { order, setOrder } = useState(null)
+const Canceled = () => {
 
-    useEffect(()=> {
-        localStorage.clear()
-        setCartItems([])
-        setTotalPrice(0)
-        setTotalQuantity(0)
-        runConfetti()
-    },[])
+
 
 
     return (
-        <div className='success-wrapper'>
-            <div className='success'>
+        <div className='cancel-wrapper'>
+            <div className='cancel'>
                 <p className='icon'>
-                    <BsBagCheckFill size={40} color='green'/>
+                    <BsBagXFill size={40} color='#d51515'/>
                 </p>
-                <h2>感謝你的購買</h2>
-                <p className='email-msg'>你的購買明細已經寄至你的信箱</p>
+                <h2>您的購買已取消</h2>
+                <p className='email-msg'>由於取消，這筆交易不會向您收款</p>
                 <p className='description'>
                     如果有任何問題，歡迎寄信至
                     <a className='email' href='mailto:antonyhy1999@gmail.com'>
@@ -36,7 +28,7 @@ const success = () => {
                 </p>
                 <Link href='/'>
                     <button type='button' className='btn'>
-                        繼續購物
+                        返回首頁
                     </button>
                 </Link>
             </div>
@@ -44,4 +36,4 @@ const success = () => {
     )
 }
 
-export default success
+export default Canceled

@@ -12,7 +12,7 @@ import getStripe from '../lib/getStripe'
 
 const cart = () => {
   const cartRef = useRef()
-  const { totalPrice, totalQuantity, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext()
+  const { totalPrice, totalQuantity, cartItems, setShowCart, toggleCartItemQuantity, onRemove} = useStateContext()
   // console.log(cartItems)
 
 
@@ -76,6 +76,7 @@ const cart = () => {
         )}
 
         <div className='product-container'>
+          {console.log(cartItems)}
           {cartItems.length > 0 && cartItems.map((item) => {
             return <div className='product' key={item._id}>
               {item && <img 

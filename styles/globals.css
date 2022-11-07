@@ -513,5 +513,57 @@ p {
   
 }
 
+/* success-page */
+.success-wrapper {
+  background-color: rgb(236, 236, 236);
+  /* background-color: rgb(7, 118, 7) */
+  margin: 20px;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.success-wrapper .description {
+  margin-top: 20px;
+}
+
+.success-wrapper .btn {
+  margin-top: 30px;
+  background-color: #d51515;
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* success-page */
+.cancel-wrapper {
+  background-color: rgb(236, 236, 236);
+  /* background-color: rgb(7, 118, 7) */
+  margin: 20px;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cancel-wrapper .description {
+  margin-top: 20px;
+}
+
+.cancel-wrapper .btn {
+  margin-top: 30px;
+  background-color: #d51515;
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 
 
