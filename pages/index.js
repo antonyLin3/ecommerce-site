@@ -8,8 +8,8 @@ const Home = ({products, bannerData}) => {
     <HeroBanner banner={bannerData}/>
       {console.log(products, bannerData)}
       <div className='products-heading'>
-        <h2>Best Selling Product</h2>
-        <p>Speakers of many variations</p>
+        <h2>最暢銷商品</h2>
+        <p>現在都在特價中</p>
       </div>
 
       <div className='products-container'>
