@@ -10,14 +10,14 @@ const HeroBanner = ({banner}) => {
             <h3>{banner[0].midText}</h3>
             <h1>{banner[0].largeText}</h1>
             <img src={urlFor(banner[0].image).url()} alt='heads-phone' className='hero-banner-image'/>
-
+            {console.log(banner)}
             <div>
-              <Link href={`/product/${banner.product}`}>
-                <button className='button'>{banner[0].buttonText}</button>
+              <Link href={`/product/${banner[0].product}`}>
+                <button style={{cursor:"pointer", zIndex:"100"}} className='button'>{banner[0].buttonText}</button>
               </Link>
               <div className='desc'>
-                <h5>Describetion</h5>
-                <p>descroption</p>
+                <h5>{banner[0].largeText}</h5>
+                <p>{banner[0].largeText2}</p>
               </div>
             </div>
         </div>

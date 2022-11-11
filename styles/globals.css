@@ -113,7 +113,7 @@ p {
 }
 
 .product-image {
-  padding: 25px;
+  padding: 25px; 
   border-radius: 40px;
   cursor: pointer;
 }
@@ -188,6 +188,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  max-width: 400px;
 
 }
 

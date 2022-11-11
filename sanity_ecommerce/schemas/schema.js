@@ -3,8 +3,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import products from './products'
 import banner from './banner'
-
+import footerBanner from './footerBanner'
 export default createSchema({
   name: 'default',
-  types: schemaTypes.concat([ products, banner ]),
+  types: schemaTypes.concat([ products, banner, footerBanner ]),
 })
