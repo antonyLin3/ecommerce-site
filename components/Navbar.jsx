@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className='navbar-container'>
       {!showCart &&<>
         <p className='logo'>
-          <Link href='/'>People House</Link>
+          <Link href='/'>健身應援輕鬆buy</Link>
         </p>
 
         <button 
