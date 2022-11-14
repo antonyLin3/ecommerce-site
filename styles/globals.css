@@ -404,6 +404,10 @@ p {
   color: #d51515;
   padding-left: 10px;
 }
+.cart-product-image {
+  max-width: 150px;
+  border: 20px;
+}
 
 /* 空購物車操作 */
 .empty-cart {
